@@ -33,6 +33,7 @@
 	            <td class="detailheader">* User Name:</td>
 	            <td class="detailuser">
 		            <asp:TextBox ID="tb_username" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_UserName" runat="server" ErrorMessage="Select a Valid User Name"></asp:RequiredFieldValidator>
 	            </td>
             </tr>
 
@@ -40,6 +41,7 @@
 	            <td class="detailheader">* Password:</td>
 	            <td class="detailuser">
 		            <asp:TextBox ID="tb_password" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_Password" runat="server" ErrorMessage="Select an appropriate Password"></asp:RequiredFieldValidator>
 	            </td>
             </tr>
 
@@ -47,6 +49,7 @@
 	            <td class="detailheader">* Email:</td>
 	            <td class="detailuser">
 		            <asp:TextBox ID="tb_email" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_Email" runat="server" ErrorMessage="Select an Email"></asp:RequiredFieldValidator>
 	            </td>
             </tr>
             <tr>
@@ -65,6 +68,7 @@
 	            <td class="detailheader">* Password Reset Answer:</td>
 	            <td class="detailuser">
 		            <asp:TextBox ID="tb_answer" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_ResetAnswer" runat="server" ErrorMessage="Select a Security Question Answer"></asp:RequiredFieldValidator>
 	            </td>
             </tr>
             

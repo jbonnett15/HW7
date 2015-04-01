@@ -29,6 +29,7 @@
     
     </div>
         <div></div>
+        <asp:Label ID="lbl_deletedstore" runat="server"></asp:Label>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:msci3300_g3ConnectionString %>" DeleteCommand="DELETE FROM [Jbonnett_HW7] WHERE [GrocerID] = @original_GrocerID AND [GrocerName] = @original_GrocerName AND [Address] = @original_Address AND [City] = @original_City AND [State] = @original_State AND [Zip] = @original_Zip" InsertCommand="INSERT INTO [Jbonnett_HW7] ([GrocerID], [GrocerName], [Address], [City], [State], [Zip]) VALUES (@GrocerID, @GrocerName, @Address, @City, @State, @Zip)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Jbonnett_HW7]" UpdateCommand="UPDATE [Jbonnett_HW7] SET [GrocerName] = @GrocerName, [Address] = @Address, [City] = @City, [State] = @State, [Zip] = @Zip WHERE [GrocerID] = @original_GrocerID AND [GrocerName] = @original_GrocerName AND [Address] = @original_Address AND [City] = @original_City AND [State] = @original_State AND [Zip] = @original_Zip">
             <DeleteParameters>
                 <asp:Parameter Name="original_GrocerID" Type="Int32" />

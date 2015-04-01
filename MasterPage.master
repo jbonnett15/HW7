@@ -1,0 +1,61 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <link href="CSS/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 260px;
+        }
+        .auto-style2 {
+            width: 145px;
+            height: 78px;
+            margin-left: 0px;
+            margin-top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="container">
+        <asp:TextBox ID="TextBox1" runat="server" BorderStyle="None" Font-Bold="True" Height="16px" ReadOnly="True" style="margin-left: 150px" Width="198px" Font-Size="Medium" CssClass="tan">Local Grocery Stores
+</asp:TextBox >
+        <br />
+
+        <asp:TextBox ID="TextBox2" runat="server"  BorderStyle="None" Font-Bold="False" Height="95px" ReadOnly="True" Width="156px" style="margin-left: 149px">Popular Grocery Stores</asp:TextBox>
+            <img alt="" class="auto-style2" src="CSS/food.png" /><br />
+
+        <asp:HyperLink ID="HyperLink1" runat="server" Font-Size="Small" ForeColor="Black" style="margin-left: 150px" NavigateUrl="~/ViewAll.aspx">Home</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="HyperLink2" runat="server" Font-Size="Small" ForeColor="Black" NavigateUrl="~/AddNew.aspx">New Grocery Store</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="HyperLink3" runat="server" Font-Size="Small" ForeColor="Black" NavigateUrl="~/About.aspx">About Us</asp:HyperLink>
+&nbsp;|
+        <asp:HyperLink ID="HyperLink4" runat="server" Font-Size="Small" ForeColor="Black" NavigateUrl="~/Contact.aspx">Contact</asp:HyperLink>
+       &nbsp;|
+       <asp:HyperLink ID="HyperLink5" runat="server" Font-Size="Small" ForeColor="Black" NavigateUrl="~/Login.aspx">Login</asp:HyperLink>
+        
+        
+        
+       <div id="main">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+       
+        </asp:ContentPlaceHolder>
+
+       </div>
+    
+                 <div id="footer">
+         &copy; © 2015 MSCI:3300 Software Design and Development
+
+                </div>
+
+        </div>
+     </form>
+</body>
+</html>

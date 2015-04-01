@@ -1,44 +1,57 @@
-﻿<%@ Page Language="VB" AutoEventWireup="false" CodeFile="AddNew.aspx.vb" Inherits="AddNew" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="AddNew.aspx.vb" Inherits="Admin_AddNew2" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-<div>
-       <asp:TextBox ID="TextBox1" runat="server" BorderStyle="None" Font-Bold="True" Height="16px" ReadOnly="True" style="margin-left: 182px" Width="174px" Font-Size="Medium" CssClass="tan">Local Grocery Stores
-</asp:TextBox >
-        <br />
-
-        <asp:TextBox ID="TextBox2" runat="server"  BorderStyle="None" Font-Bold="False" Height="16px" ReadOnly="True" Width="200px" style="margin-left: 185px">Using 5 Ingredients or Less!</asp:TextBox>
-        <br />
-
-        <asp:HyperLink ID="HyperLink1" runat="server" Font-Size="Small" ForeColor="Black" style="margin-left: 150px" NavigateUrl="~/Default.aspx">Home</asp:HyperLink>
-&nbsp;|
-        <asp:HyperLink ID="HyperLink2" runat="server" Font-Size="Small" ForeColor="Black" NavigateUrl="~/NewRecipe.aspx">New Grocery Store</asp:HyperLink>
-&nbsp;|
-        <asp:HyperLink ID="HyperLink3" runat="server" Font-Size="Small" ForeColor="Black" NavigateUrl="~/AboutUs.aspx">About Us</asp:HyperLink>
-&nbsp;|
-        <asp:HyperLink ID="HyperLink4" runat="server" Font-Size="Small" ForeColor="Black" NavigateUrl="~/ContactUs.aspx">Contact</asp:HyperLink>
-   </div>
-        <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:msci3300_g3ConnectionString %>" SelectCommand="SELECT * FROM [Jbonnett_HW7]"></asp:SqlDataSource>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    </asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <br />
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:msci3300_g3ConnectionString %>" SelectCommand="SELECT * FROM [Jbonnett_HW7]" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [Jbonnett_HW7] WHERE [GrocerID] = @original_GrocerID AND [GrocerName] = @original_GrocerName AND [Address] = @original_Address AND [City] = @original_City AND [State] = @original_State AND [Zip] = @original_Zip" InsertCommand="INSERT INTO [Jbonnett_HW7] ([GrocerID], [GrocerName], [Address], [City], [State], [Zip]) VALUES (@GrocerID, @GrocerName, @Address, @City, @State, @Zip)" OldValuesParameterFormatString="original_{0}" UpdateCommand="UPDATE [Jbonnett_HW7] SET [GrocerName] = @GrocerName, [Address] = @Address, [City] = @City, [State] = @State, [Zip] = @Zip WHERE [GrocerID] = @original_GrocerID AND [GrocerName] = @original_GrocerName AND [Address] = @original_Address AND [City] = @original_City AND [State] = @original_State AND [Zip] = @original_Zip">
+            <DeleteParameters>
+                <asp:Parameter Name="original_GrocerID" Type="Int32" />
+                <asp:Parameter Name="original_GrocerName" Type="String" />
+                <asp:Parameter Name="original_Address" Type="String" />
+                <asp:Parameter Name="original_City" Type="String" />
+                <asp:Parameter Name="original_State" Type="String" />
+                <asp:Parameter Name="original_Zip" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="GrocerID" Type="Int32" />
+                <asp:Parameter Name="GrocerName" Type="String" />
+                <asp:Parameter Name="Address" Type="String" />
+                <asp:Parameter Name="City" Type="String" />
+                <asp:Parameter Name="State" Type="String" />
+                <asp:Parameter Name="Zip" Type="Int32" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="GrocerName" Type="String" />
+                <asp:Parameter Name="Address" Type="String" />
+                <asp:Parameter Name="City" Type="String" />
+                <asp:Parameter Name="State" Type="String" />
+                <asp:Parameter Name="Zip" Type="Int32" />
+                <asp:Parameter Name="original_GrocerID" Type="Int32" />
+                <asp:Parameter Name="original_GrocerName" Type="String" />
+                <asp:Parameter Name="original_Address" Type="String" />
+                <asp:Parameter Name="original_City" Type="String" />
+                <asp:Parameter Name="original_State" Type="String" />
+                <asp:Parameter Name="original_Zip" Type="Int32" />
+            </UpdateParameters>
+    </asp:SqlDataSource>
        
         
-         <asp:FormView ID="FormView1" runat="server" DataKeyNames="GrocerID" DataSourceID="SqlDataSource1">
-            <InsertItemTemplate>
+         <asp:FormView ID="FormView1" runat="server" DataKeyNames="GrocerID" DataSourceID="SqlDataSource1" style="margin-right: 36px" DefaultMode="Insert">
+             
+             
+             
+             
+                 <InsertItemTemplate>
                 <table>
                     <tr>
-                       <td style="text-align:right;" class="auto-style2">
+                       <td style="text-align:right;" class="auto-style5">
                             GrocerID  :
                         </td>
-                        <td style="text-align:left" class="auto-style2">
+                        <td style="text-align:left" class="auto-style5">
                             <asp:TextBox ID="tb_GrocerID" runat="server" Text='<%# Bind("GrocerID") %>'/>
                         </td>
-                        <td class="validationError">
+                        <td class="auto-style4">
                             <asp:RequiredFieldValidator ID="rfv_GrocerID" runat="server" ErrorMessage="Enter a GrocerID" CssClass="validationError" ControlToValidate="tb_GrocerID"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
@@ -49,7 +62,7 @@
                         <td style="text-align:left">
                             <asp:TextBox ID="tb_GrocerName" runat="server" Text='<%# Bind("GrocerName") %>' />
                         </td>
-                         <td>
+                         <td class="auto-style3">
                             <asp:RequiredFieldValidator ID="rfv_GrocerName" runat="server" ErrorMessage="Enter a Grocery Name" CssClass="validationError" ControlToValidate="tb_GrocerName"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
@@ -61,7 +74,7 @@
                         <td style="text-align:left">
                             <asp:TextBox ID="tb_Address" runat="server" Text='<%# Bind("Address") %>' />
                         </td>
-                         <td>
+                         <td class="auto-style3">
                             <asp:RequiredFieldValidator ID="rfv_address" runat="server" ErrorMessage="Enter an Address" CssClass="validationError" ControlToValidate="tb_Address"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
@@ -72,7 +85,7 @@
                         <td style="text-align:left">
                             <asp:TextBox ID="tb_City" runat="server" Text='<%# Bind("City") %>' />
                         </td>
-                        <td>
+                        <td class="auto-style3">
                             <asp:RequiredFieldValidator ID="rfv_City" runat="server" ErrorMessage="Enter a City" CssClass="validationError" ControlToValidate="tb_City"></asp:RequiredFieldValidator>
                         </td>
                     </tr>
@@ -83,7 +96,7 @@
                         <td style="text-align:left">
                             <asp:TextBox ID="tb_State" runat="server" Text='<%# Bind("State") %>' />
                         </td>
-                         <td>
+                         <td class="auto-style3">
                              <asp:RequiredFieldValidator ID="rfv_State" runat="server" ErrorMessage="Please enter a State"></asp:RequiredFieldValidator>
                          </td>
                     </tr>
@@ -94,7 +107,7 @@
                         <td style="text-align:left">
                             <asp:TextBox ID="tb_Zip" runat="server" Text='<%# Bind("Zip") %>' />
                         </td>
-                         <td>
+                         <td class="auto-style3">
                              <asp:RequiredFieldValidator ID="rfv_Zip" runat="server" ErrorMessage="Please Enter a Zip"></asp:RequiredFieldValidator>
                          </td>
                     </tr>                                                       
@@ -108,7 +121,11 @@
                     </tr>
                 </table>
             </InsertItemTemplate>
+                
+                 
+             
+            
+            
         </asp:FormView>          
-    </form>
-</body>
-</html>
+</asp:Content>
+
