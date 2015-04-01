@@ -97,7 +97,7 @@
                             <asp:TextBox ID="tb_State" runat="server" Text='<%# Bind("State") %>' />
                         </td>
                          <td class="auto-style3">
-                             <asp:RequiredFieldValidator ID="rfv_State" runat="server" ErrorMessage="Please enter a State"></asp:RequiredFieldValidator>
+                             <asp:RequiredFieldValidator ID="rfv_State" runat="server" ErrorMessage="Please enter a State" CssClass="validationError" ControlToValidate="tb_State"></asp:RequiredFieldValidator>
                          </td>
                     </tr>
                      <tr>
@@ -108,7 +108,7 @@
                             <asp:TextBox ID="tb_Zip" runat="server" Text='<%# Bind("Zip") %>' />
                         </td>
                          <td class="auto-style3">
-                             <asp:RequiredFieldValidator ID="rfv_Zip" runat="server" ErrorMessage="Please Enter a Zip"></asp:RequiredFieldValidator>
+                             <asp:RequiredFieldValidator ID="rfv_Zip" runat="server" ErrorMessage="Please Enter a Zip"CssClass="validationError" ControlToValidate="tb_Zip"> ></asp:RequiredFieldValidator>
                          </td>
                     </tr>                                                       
                      <tr>

@@ -33,7 +33,7 @@
 
         <asp:HyperLink ID="HyperLink1" runat="server" Font-Size="Small" ForeColor="Black" style="margin-left: 150px" NavigateUrl="~/ViewAll.aspx">Home</asp:HyperLink>
 &nbsp;|
-        <asp:HyperLink ID="HyperLink2" runat="server" Font-Size="Small" ForeColor="Black" NavigateUrl="~/AddNew.aspx">New Grocery Store</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink2" runat="server" Font-Size="Small" ForeColor="Black" NavigateUrl="Admin/AddNew.aspx">New Grocery Store</asp:HyperLink>
 &nbsp;|
         <asp:HyperLink ID="HyperLink3" runat="server" Font-Size="Small" ForeColor="Black" NavigateUrl="~/About.aspx">About Us</asp:HyperLink>
 &nbsp;|
