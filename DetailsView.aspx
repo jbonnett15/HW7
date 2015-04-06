@@ -14,7 +14,7 @@
         </asp:SqlDataSource>
 
         
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" DataSourceID="SqlDataSource1" Height="50px" Width="314px" DataKeyNames="GrocerID" style="margin-left: 122px">
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CssClass="GridView" DataSourceID="SqlDataSource1" Height="50px" Width="314px" DataKeyNames="GrocerID" style="margin-left: 122px">
             <Fields>
                 <asp:BoundField DataField="GrocerID" HeaderText="GrocerID" SortExpression="GrocerID" ReadOnly="True" />
                 <asp:BoundField DataField="GrocerName" HeaderText="GrocerName" SortExpression="GrocerName" />

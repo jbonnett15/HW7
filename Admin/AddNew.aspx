@@ -37,7 +37,7 @@
     </asp:SqlDataSource>
        
         
-         <asp:FormView ID="FormView1" runat="server" DataKeyNames="GrocerID" DataSourceID="SqlDataSource1" style="margin-right: 36px" DefaultMode="Insert">
+         <asp:FormView ID="FormView1" runat="server" CssClass="GridView" DataKeyNames="GrocerID" DataSourceID="SqlDataSource1" style="margin-right: 36px" DefaultMode="Insert">
              
              
              
@@ -108,7 +108,7 @@
                             <asp:TextBox ID="tb_Zip" runat="server" Text='<%# Bind("Zip") %>' />
                         </td>
                          <td class="auto-style3">
-                             <asp:RequiredFieldValidator ID="rfv_Zip" runat="server" ErrorMessage="Please Enter a Zip"CssClass="validationError" ControlToValidate="tb_Zip"> ></asp:RequiredFieldValidator>
+                             <asp:RequiredFieldValidator ID="rfv_Zip" runat="server" ErrorMessage="Please Enter a Zip" CssClass="validationError" ControlToValidate="tb_Zip"> </asp:RequiredFieldValidator>
                          </td>
                     </tr>                                                       
                      <tr>

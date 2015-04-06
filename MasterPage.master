@@ -10,9 +10,6 @@
     
     <link href="CSS/StyleSheet.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
-        .auto-style1 {
-            width: 260px;
-        }
         .auto-style2 {
             width: 145px;
             height: 78px;
@@ -21,14 +18,14 @@
         }
     </style>
 </head>
-<body>
-    <form id="form1" runat="server">
-    <div id="container">
-        <asp:TextBox ID="TextBox1" runat="server" BorderStyle="None" Font-Bold="True" Height="16px" ReadOnly="True" style="margin-left: 150px" Width="198px" Font-Size="Medium" CssClass="tan">Local Grocery Stores
-</asp:TextBox >
+<body style="background-color:lightblue" >
+    <form id="form1" runat="server" cssclass="background">
+    <div id="container"   >
+        <asp:TextBox ID="TextBox1" runat="server" BorderStyle="None" Font-Bold="True" Height="16px" ReadOnly="True" style="margin-left: 150px" Width="198px" Font-Size="Medium" CssClass="background">Local Grocery Stores
+</asp:TextBox  >
         <br />
 
-        <asp:TextBox ID="TextBox2" runat="server"  BorderStyle="None" Font-Bold="False" Height="95px" ReadOnly="True" Width="156px" style="margin-left: 149px">Popular Grocery Stores</asp:TextBox>
+        <asp:TextBox ID="TextBox2" runat="server"  BorderStyle="None" Font-Bold="False" Height="95px" ReadOnly="True" Width="156px" style="margin-left: 149px" CssClass="background">Popular Grocery Stores</asp:TextBox>
             <img alt="" class="auto-style2" src="CSS/food.png" /><br />
 
         <asp:HyperLink ID="HyperLink1" runat="server" Font-Size="Small" ForeColor="Black" style="margin-left: 150px" NavigateUrl="~/ViewAll.aspx">Home</asp:HyperLink>
@@ -43,11 +40,24 @@
         
         
         
-       <div id="main">
+       &nbsp;|
+       <asp:HyperLink ID="HyperLink6" runat="server" Font-Size="Small" ForeColor="Black" NavigateUrl="~/Admin/ViewAll.aspx">Admin</asp:HyperLink>
+        
+        &nbsp;|
+        <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Search.aspx" ForeColor="Black">Search </asp:HyperLink>
+        
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="LBL_date" runat="server"></asp:Label> 
+        &nbsp;<div id="search">
+
+        
+
+        </div>
+&nbsp;<div id="main">
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
        
         </asp:ContentPlaceHolder>
-
+           
        </div>
     
                  <div id="footer">

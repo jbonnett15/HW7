@@ -1,2 +1,36 @@
-﻿body {
+﻿html, body {
+  height: 100%;
+}
+
+.background{
+    background-color:lightblue;
+
+}
+.form1 {
+    background-color: blue;
+}
+
+.GridView {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: indianred;
+    border: solid 2px thick;
+    text-align: center;
+    color: orange;
+    margin: 4px;
+    
+}
+
+.search{
+    width: 50%;
+    float: left;
+    margin: 0 auto;
+    padding: 8px 15px;
+    background-color:purple;
+    text-align:left;
+    font-weight:bold;
+
+
 }

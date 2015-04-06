@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/MasterPage.master" AutoEventWireup="false" CodeFile="ViewAll.aspx.vb" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <link href="CSS/StyleSheet.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .GridView {}
     </style>
@@ -10,7 +11,7 @@
         <br />
          <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:msci3300_g3ConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [Jbonnett_HW7]"></asp:SqlDataSource>
         <div style="margin-left: 120px; width: 295px;">
-            <asp:GridView ID="GridView1" runat="server" CssClass="GridView" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" PageSize="1000" Width="467px" Height="135px">
+            <asp:GridView ID="GridView1" runat="server" CssClass="GridView" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" PageSize="1000" Width="467px" Height="135px" AllowSorting="True">
                 <Columns>
                     <asp:BoundField DataField="GrocerName" HeaderText="GrocerName" SortExpression="GrocerName" />
                     <asp:BoundField DataField="Address" HeaderText="Address" SortExpression="Address" />
